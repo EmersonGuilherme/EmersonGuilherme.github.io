@@ -1,63 +1,41 @@
-# Portfólio — Emerson Guilherme da Silva
+# Emerson Guilherme da Silva — Quality Engineering Portfolio
 
-Portfólio profissional **responsivo e bilíngue (PT/EN)**, pronto para publicar gratuitamente no GitHub Pages.
+Bilingual (English / Brazilian Portuguese), responsive static portfolio for GitHub Pages. The website uses native HTML, CSS, SVG and JavaScript. No backend, API keys, analytics, CDN or paid dependencies are required.
 
-## O que está incluído
+## Contents
 
-- `index.html`: página única com apresentação, experiência, competências, projetos e contato.
-- `assets/style.css`: visual responsivo e acessível.
-- `assets/script.js`: alternância PT/EN e navegação mobile, sem dependências externas.
-- `assets/favicon.svg`: ícone vetorial.
-- `404.html`: redirecionamento para a página principal.
+- `index.html` — portfolio, selected career history, real public project links and four labs.
+- `style.css` — responsive visual system, dark/light themes, reduced-motion and print layout.
+- `script.js` — translations, theme, keyboard-accessible tabs, deterministic local assertions, synthetic performance generation, SVG charts and evidence export.
+- `favicon.svg`, `404.html`, `.nojekyll` — site assets and Pages configuration.
 
-## Publicação no GitHub Pages
-
-### Opção A — URL pessoal (recomendada)
-
-1. Entre na conta GitHub `EmersonGuilherme`.
-2. Crie um repositório **público** chamado exatamente `EmersonGuilherme.github.io`.
-3. Envie o conteúdo **desta pasta**, de forma que `index.html` fique na raiz do repositório (não dentro de outra subpasta).
-4. Acesse **Settings → Pages** e escolha **Deploy from a branch**.
-5. Selecione **main** e **/(root)**, depois salve.
-6. Quando a publicação terminar, abra `https://emersonguilherme.github.io/`.
-
-### Opção B — Repositório de projeto
-
-Crie um repositório `portfolio`, envie os arquivos à raiz e configure **Settings → Pages → main → /(root)**. O endereço será `https://emersonguilherme.github.io/portfolio/`.
-
-## Antes de publicar
-
-- Confirme os períodos e os cargos das experiências profissionais no seu currículo atualizado.
-- Confira se o LinkedIn e o e-mail são os contatos desejados para publicação.
-- Os projetos Guimi Atende e Integra estão identificados como **planejados**.
-- O projeto Guimi Test AI está identificado como **em desenvolvimento**, sem afirmação de maturidade de produção.
-- Os estudos de caso profissionais são anonimizados e não contêm código confidencial.
-- Se quiser adicionar currículo em PDF, salve-o como `assets/cv.pdf` e inclua um botão no `index.html`.
-
-## Personalização rápida
-
-- Textos em português: `index.html`.
-- Textos em inglês: objeto `translations` em `assets/script.js`.
-- Cores: variáveis `:root` no início de `assets/style.css`.
-- Projetos: cartões da seção `id="projetos"` em `index.html`.
-
-## Teste local
-
-Abra `index.html` diretamente no navegador, ou execute:
+## Run locally
 
 ```bash
 python -m http.server 8000
 ```
 
-Depois acesse `http://localhost:8000`.
+Open `http://localhost:8000`. Alternatively, open `index.html` directly in a modern browser with the remaining files in the same directory.
 
-Nenhum backend, token, banco de dados ou ferramenta paga é necessário.
+## Deploy to the existing GitHub Pages repository
 
+The deployment source already has a history. Keep it intact: create a branch (e.g. `portfolio-v3`) from `main`, upload these files to the **repository root**, commit, open a pull request and merge after review. Existing `demos.js` is unused by the new site and can be left in place. Do not change GitHub Pages settings if deployment already works; otherwise use Settings → Pages → Deploy from a branch → `main` / `/(root)`.
 
-## Laboratório interativo (v2)
+The site will be served at https://emersonguilherme.github.io/ once GitHub Pages deploys the merged commit.
 
-Quatro demonstrações 100% locais no navegador: validação didática de contrato JSON, distribuição sintética de latência, execução simulada de suíte Cypress/Playwright e avaliação determinística de resposta de chatbot. **Nenhuma delas acessa serviços externos ou executa ferramentas reais.** Os resultados não devem ser divulgados como benchmarks ou testes reais.
+## Data and evidence policy
 
-Arquivos novos: `assets/demos.js`. O laboratório funciona sem backend, sem build e sem credenciais. Para testar, abra `index.html` ou execute `python -m http.server 8000` na pasta do site.
+- Employment periods deliberately avoid incompatible month/year details across CVs: Itaú 2025–2026, AB InBev ending in 2025. Confirm the exact start/end dates before expanding them. The English CV lists another Itaú start year and other CVs differ on BEES start dates.
+- LinkedIn uses the URL common to three versions of the CV. The mobile CV uses a different slug; confirm current link if necessary.
+- Email is taken from the CVs; phone and full CV attachments are not published. The architecture graphics are original illustrative vectors, not photos or employer diagrams.
+- The ServeRest API automation and two Guimi repositories were found on GitHub. No CI result, production readiness, customer KPI, security certification, or commercial traction is claimed. Guimi is labeled as in development.
+- Labs execute browser-local checks on fictional fixtures: Kafka/Avro-like rules (not Avro serialization), performance using a seeded synthetic sample (not a real load test), API fixture assertions (not HTTP calls), and AI response keyword checks (not an LLM judge).
+- Evidence JSON records assertion results and metadata, not raw input values. Only limited non-text observations are included; do not enter private or confidential data.
 
-Para substituir demos por evidências reais no futuro, inclua resultados gerados por repositórios públicos próprios, testes reproduzíveis, prints autorizados e documentação técnica. Não inclua dados internos de clientes.
+## Browser checks
+
+Open each tab, exercise valid and invalid inputs, switch English/Portuguese and light/dark, and download the JSON output. Check at narrow and wide viewports. The print button opens the browser's print dialog so the content can be saved as PDF.
+
+## Verification performed
+
+The portfolio and all four labs were exercised in Chromium using inline copies of the checked-in CSS/JS, including positive/negative checks, keyboard tab navigation, translations, theme switching and JSON download; viewport widths 320, 390, 768 and 1440 px were checked for horizontal overflow. GitHub deployment was not performed: the repository connection denied branch creation.
